@@ -384,6 +384,18 @@ class Solution(object):
 	def swapOddEvenBits(self,interg):
 		return (((interg & 0xaaaaaaaa) >> 1) | ((interg & 0x55555555) << 1))
 
+	#-------Math and Logic Puzzles-------#
+	#Not often been asked since lots of companies have polices to ban them. But still could be. 
+	def check_prime(self,number):
+		if number < 2:
+			return False
+		else:
+			for num in range(2,int(number**0.5)):
+				if (number%num) == 0:
+					return False
+			return True
+	
+
 if __name__ == '__main__':
 	item = (1,2)
 	s = Solution()

@@ -34,7 +34,7 @@ def main():
 	test_solution.test_next_number(solution)
 	test_solution.test_conversion(solution)
 	test_solution.test_swapOddEvenBits(solution)
-	
+	test_solution.test_check_prime(solution)
 if __name__ == '__main__':
 	main()
 
