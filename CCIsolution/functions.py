@@ -10,11 +10,12 @@ from Myqueue import *
 from Animal_shelter import *
 from Tree import *
 from Graph import *
-
+import random
+import math
 debug = True
 
-
 class Solution(object):
+	
 	def __init__(self):
 		pass
 	#-------Array and Lists--------#
@@ -384,7 +385,7 @@ class Solution(object):
 	def swapOddEvenBits(self,interg):
 		return (((interg & 0xaaaaaaaa) >> 1) | ((interg & 0x55555555) << 1))
 
-	#-------Math and Logic Puzzles-------#
+	#-------6. Math and Logic Puzzles-------#
 	#Not often been asked since lots of companies have polices to ban them. But still could be. 
 	def check_prime(self,number):
 		if number < 2:
@@ -394,17 +395,214 @@ class Solution(object):
 				if (number%num) == 0:
 					return False
 			return True
-	
+	# Get prime KEY: If it's prime, it will not be divided by the smaller one.
+	def cut_off(self,prime):
+		for index in range(len(self.flag)):
+			if index % prime  == 0 and index != prime:
+				self.flag[index] = False
 
+	def get_next_prime(self,prime):
+		next_prime = prime + 1 
+		while (next_prime < len(self.flag)) and self.flag[next_prime] == False:
+			next_prime += 1
+		return next_prime
+
+	def sieveOfEratosthenes(self,max_number):
+		self.flag = [True for i in range(max_number)]
+		prime = 2
+		while prime <= int(max_number**0.5):
+			self.cut_off(prime)
+			prime = self.get_next_prime(prime)
+		self.flag[0] = False
+		return self.flag
+
+	#----------7 Object-Oriented Design----------#
+
+	#----------8 Recursion and Dynamic Programming---------#
+	# O(2^n)
+	def fibonacci_1(self,number):
+		if number == 0:
+			return 0
+		elif number == 1:
+			return 1
+		else:
+			return fibonacci(number-1) + fibonacci(number-2)
+	# O(n)
+	def fibonacci_2(self,number):
+		if number == 0:
+			return 0
+		a = 0
+		b = 1
+		for index in range(number):
+			c = a + b 
+			a = b
+			b = c
+		return a + b
+	#8.1 
+	def Triple_Step(self,steps):
+		result = 0
+		for j in range(int(steps/2)):
+			for i in range(steps):
+				if (steps - 2 * j - 3 * i) >= 0 and (steps - 2 * j - 3 * i) <= steps:
+					result += 1
+		return result
+	#8.2 
+	def Robot_in_a_Grid(self,R,C):
+		R_list = ['>']*R
+		C_list = ['v']*C
+		Policy = {0:R_list,1:C_list}
+		result = []
+		for i in range(R+C):
+			index = random.randint(0,1)
+			if len(Policy[index]) == 0:
+				index = abs(1-index)
+			cur_policy = Policy[index].pop()
+			result.append(cur_policy)
+		return result
+	#8.3
+	def Magic_Index(self,an_array):
+		result = []
+		for i in range(len(an_array)):
+			if (i+1) == an_array[i]:
+				result.append(i+1)
+		if len(result) == 0:
+			print("No magic array")
+			return 
+		else:
+			return result
+	#8.5
+	def Recursive_Multiply(self,A,B):
+		if A - B >0:
+			multi = B
+			base = A
+		else:
+			multi = A
+			base = B
+		result = 0
+		for i in range(multi):
+			result += base
+		return result
+	#8.7
+	def Permutations_fuc(self,string):
+		return string[:-1]+string[-1],string[-1]+string[:-1]
+	def Permutations(self,string):
+		temp_result = []
+		if len(string) == 1:
+			return string
+		else:
+			temp_result.append(string[:2])
+			for index in range(1,len(string)-1):
+				for i in range(math.factorial(index)):
+					a,b = self.Permutations_fuc(temp_result.pop(0))
+					temp_result.append(a+string[index+1])
+					temp_result.append(b+string[index+1])
+			last_range = len(temp_result)
+			for i in range(math.factorial(last_range)):
+				a,b = self.Permutations_fuc(temp_result.pop(0))
+				temp_result.append(a)
+				temp_result.append(b)
+		return temp_result
+	#8.11
+	def Coins(self,N):
+		return 4**N
+	#---------9. System Design and Scalability--------#
+
+	#---------10. Sorting and Searching---------#
+	##Classic sort:
+	#-Bubble sort:O(n^2)
+	def Bubble_sort(self,data):
+		lenth = len(data)-1
+		for i in range(len(data)):
+			for index in range(lenth):
+				if data[index]>data[index+1]:
+					temp = data[index]
+					data[index] = data[index+1]
+					data[index+1] = temp
+			lenth -= 1
+		return data
+	#-Selection sort:O(n^2)
+	def Selection_sort(self,data):
+		#searching
+		result = []
+		lenth = len(data)
+		for index in range(lenth):
+			min_index = 0;min_value = data[0]
+			for i in range(len(data)):
+				if data[i]<min_value:
+					min_value = data[i];min_index = i
+			result.append(data.pop(min_index))
+		return result
+	#-Merge sort
+	def mergeSort(self,alist):
+	    if len(alist)>1:
+	        mid = len(alist)//2
+	        lefthalf = alist[:mid]
+	        righthalf = alist[mid:]
+	        self.mergeSort(lefthalf)
+	        self.mergeSort(righthalf)
+	        i=0
+	        j=0
+	        k=0
+	        while i < len(lefthalf) and j < len(righthalf):
+	            if lefthalf[i] < righthalf[j]:
+	                alist[k]=lefthalf[i]
+	                i=i+1
+	            else:
+	                alist[k]=righthalf[j]
+	                j=j+1
+	            k=k+1
+	        while i < len(lefthalf):
+	            alist[k]=lefthalf[i]
+	            i=i+1
+	            k=k+1
+
+	        while j < len(righthalf):
+	            alist[k]=righthalf[j]
+	            j=j+1
+	            k=k+1
+	    return alist
+	#-Quick sort
+	def quick_sort(self,mylist,start,end):
+		pivot = self.partition(mylist,start,end)
+		quick_sort(mylist,start,pivot-1)
+		quick_sort(mylist,pivot+1, end)
+		return mylist
+	#-Radix sort
+	#Sorted Merge
+	def Sorted_Merge(self,lista,listb):
+		result = [0]*(len(lista)+len(listb))
+		i = len(lista)
+		j = len(listb)
+		k = i + j - 1
+		while k >= 0:
+			if (lista[i-1]>listb[j-1]) or (j<=0):
+				result[k] = lista[i-1]
+				i -= 1
+				k -= 1
+			else:
+				result[k] = listb[j-1]
+				j -= 1
+				k -= 1
+		return result
+	# 10.3 Sorted Search, No Size
+	def SortedSearchNoSize(self,Listy,item):
+		diction = {}
+		index   = 0
+		while True:
+			diction[Listy.elementAt(index)] = diction.get(Listy.elementAt(index),'start:') + str(index) + '  ' 
+			index += 1
+			if Listy.elementAt(index) == -1:
+				break
+		if item not in diction.keys():
+			print("No such item")
+			return 
+		else:
+			return diction[item]
+	# 10.4 
 if __name__ == '__main__':
 	item = (1,2)
 	s = Solution()
 	test = 0b1001
-	print(s.next_number(test))
-
-
-
-
-
-
-
+	alist = s.Bubble_sort([111,2,3,4,5,13])
+	blist = s.Bubble_sort([6,7,8,9,10,11])
+	alist = s.Sorted_Merge(alist,blist)

@@ -7,7 +7,7 @@ from SingleList import *
 from Graph import *
 import inspect
 import sys  
-
+from Listy import *
 
 #Test function
 class Test_Solution(Solution):
@@ -160,9 +160,68 @@ class Test_Solution(Solution):
 		interg = 0b010101010
 		self.sresult("5.7 swapOddEvenBits",bin(solution.swapOddEvenBits(interg)))
 	#-------Math and Logic Puzzles-------#
+	#6 check prime
 	def test_check_prime(self,solution):
 		number = int(13)
 		self.sresult("check_prime",solution.check_prime(number))
-
-
-
+	#6 generate prime
+	def test_sieveOfEratosthenes(self,solution):
+		number = 10
+		self.sresult("sieveOfEratosthenes",solution.sieveOfEratosthenes(number))
+	#6 fibonacci
+	def test_fibonacci_2(self,solution):
+		number = 10
+		self.sresult("fibonacci_2",solution.fibonacci_2(number))
+	#8.1
+	def test_Triple_Step(self,solution):
+		steps = 13
+		self.sresult("8.1 triple_step",solution.Triple_Step(steps))
+	#8.2
+	def test_Robot_in_a_Grid(self,solution):
+		Row = 10
+		Column = 13
+		self.sresult("8.2 Robot in a grid",solution.Robot_in_a_Grid(Row,Column))
+	#8.3
+	def test_Magic_Index(self,solution):
+		test_array = [1,2,4,5,5,6,6,6,6]
+		self.sresult("8.3 Magic_Index",solution.Magic_Index(test_array))
+	#8.5 
+	def test_Recursive_Multiply(self,solution):
+		multi1 = 10
+		multi2 =12
+		self.sresult("8.5 Recursive_Multiply",solution.Recursive_Multiply(multi1,multi2))
+	#8.7
+	def test_Permutations(self,solution):
+		num = '1abc'
+		self.sresult("8.7 Permutations",solution.Permutations(num))
+	#8.11
+	def test_Coins(self,solution):
+		num = 4
+		self.sresult("8.11 Coins",solution.Coins(num))
+	#10 Sort and search
+	# Bubble sort
+	def test_Bubble_sort(self,solution):
+		test_list = [2,3,4,3,345,5]
+		self.sresult("10 - Bubble sort",solution.Bubble_sort(test_list))
+	#Selection sort
+	def test_Selection_sort(self,solution):
+		test_list = [2,3,4,3,345,5]
+		self.sresult("10 - Selection sort",solution.Selection_sort(test_list))
+	#Merge sort
+	def test_Merge_sort(self,solution):
+		test_list = [2,3,4,3,345,5]
+		self.sresult("10 - Merge sort", solution.mergeSort(test_list))
+	# quick sort 
+	def test_quick_sort(self,solution):
+		test_list = [2,3,4,3,345,5]
+		self.sresult("10 - Quick sort", solution.quick_sort(test_list))
+	# 10.1 Sorted Merge
+	def test_Sorted_Merge(self,solution):
+		alist = solution.Bubble_sort([15,2,3,4,5,13])
+		blist = solution.Bubble_sort([6,7,8,9,10,11])
+		self.sresult("10.1 Sorted merge", solution.Sorted_Merge(alist,blist))
+	# 10.3 SortedSearchNoSize
+	def test_SortedSearchNoSize(self,solution):
+		testlist = Listy([1,1,2,2,4,2,5,6,7,7,8,9,10])
+		self.sresult("10.2 SortedSearchNoSize", solution.SortedSearchNoSize(testlist,2))
+	
