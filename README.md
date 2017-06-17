@@ -7,25 +7,25 @@ My approach to a set of coding problems in the book Cracking the Coding Intervie
 ### Contents
 
 ```
-## Arrays and Strings
+1. Arrays and Strings
 
-## Linked Lists
+2. Linked Lists
 
-## Stacks and Queues
+3. Stacks and Queues
 
-## Trees and Graphs
+4. Trees and Graphs
 
-## Bit Manipulation
+5. Bit Manipulation
 
-## Math and Logic Puzzles
+6. Math and Logic Puzzles
 
-## Object-Oriented Design
+7. Object-Oriented Design
 
-## Recursion and Dynamic Programming
+8. Recursion and Dynamic Programming
 
-## System Design and Scalability
+9. System Design and Scalability
 
-## Sorting and Searching
+10. Sorting and Searching
 
 ```
 ### How to use
