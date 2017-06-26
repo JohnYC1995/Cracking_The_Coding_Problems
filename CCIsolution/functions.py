@@ -13,6 +13,8 @@ from Graph import *
 import random
 import math
 import string  
+from random import randint
+
 debug = True
 
 class Solution(object):
@@ -175,7 +177,6 @@ class Solution(object):
 	# Often be used in Recursive alggorithms
 	#3.1
 	# seperate teh whole stack into three parts. for each part, use for each stack.
-
 	#3.2
 	def Mystack(self):
 		mystack = Mystack()
@@ -385,7 +386,6 @@ class Solution(object):
 	#5.7swapOddEvenBits
 	def swapOddEvenBits(self,interg):
 		return (((interg & 0xaaaaaaaa) >> 1) | ((interg & 0x55555555) << 1))
-
 	#-------6. Math and Logic Puzzles-------#
 	#Not often been asked since lots of companies have polices to ban them. But still could be. 
 	def check_prime(self,number):
@@ -650,7 +650,6 @@ class Solution(object):
 		rightlist = [tlist[-1]]
 		countleft = True
 		countright = True
-		print("----->start")
 		for i in range(len(tlist)-1):
 			if countleft and tlist[i+1]>leftlist[i]:
 				leftlist.append(tlist[i+1])
@@ -673,9 +672,46 @@ class Solution(object):
 			leftlist.pop()
 		while rightlist[-1] <maxvalue:
 			rightlist.pop()
-		print(leftlist)
-		print(rightlist)
 		return (len(leftlist),len(tlist)-len(rightlist))
+	#16.17 Contiguous Sequence
+	def contiguous_sequence(self,testlist):
+		maxvalue = testlist[0] + testlist[1]
+		for index in range(len(testlist)):
+			if index == 0:
+				tempvalue = testlist[index] + testlist[index+1]
+			elif index == len(testlist)-1:
+				tempvalue = testlist[index-1] + testlist[index]
+			else:
+				tempvalue = testlist[index-1] + testlist[index] + testlist[index+1]
+			if tempvalue > maxvalue:
+				maxvalue = tempvalue
+		return maxvalue
+	#16.21
+	def sum_swap(self,list1,list2):
+		#sum list
+		sumlist1 = 0
+		sumlist2 = 0
+		for i in range(len(list1)):
+			sumlist1 += list1[i]
+		for i in range(len(list2)):
+			sumlist2 += list2[i]
+		target = (sumlist1-sumlist2)/2
+		list2set = set(list2)
+		flag = False
+		for item in list1:
+			if (item - target) in list2set:
+				return (item, int((item - target)))
+				flag = True
+		if flag == False:
+			print("the lists cannot be the same")
+			return
+	# 16.22
+	def rand7fromrand5(self):
+		while True:
+			seed = 5*randint(0,5)+randint(0,5)
+			if seed < 21:
+				return seed % 7
+
 
 if __name__ == '__main__':
 	item = (1,2)
@@ -689,6 +725,8 @@ if __name__ == '__main__':
 	num2  = s.Word_Frequencies(book, 'we')
 	dif,loca = s.Smallest_Difference(alist,blist)
 	print(dif,loca)
-	a = [1,2,4,5,52,3,51,61,71]
-	result = s.sub_sort(a)
+	a = [2,3,4,1,34,3,4,4]
+	b = [2,3,4,1,34,3,4,5]
+	result = s.sum_swap(a,b)
 	print(result)
+	print(s.rand7fromrand5())

@@ -248,6 +248,17 @@ class Test_Solution(Solution):
 		testlist = [1,2,4,5,52,3,51,61,71]
 		self.sresult("16.16 Sub Sort",solution.sub_sort(testlist))
 
+	#16.17 Contiguous Sequence
+	def test_contiguous_sequence(self,solution):
+		testlist = [1,2,4,5,52,3,51,61,71]
+		self.sresult("16.17 Contiguous sequence", solution.contiguous_sequence(testlist))
 
+	#16.21 sum_swap
+	def test_sum_swap(self,solution):
+		list1 = [2,3,4,1,34,3,4,3]
+		list2 = [2,3,4,1,34,3,4,5]
+		self.sresult("16.21 sum swap",solution.sum_swap(list1,list2))
 
-
+	#.16.22 rand7fromrand5
+	def test_rand7fromrand5(self,solution):
+		self.sresult("16.22 rand7fromrand5", solution.rand7fromrand5())

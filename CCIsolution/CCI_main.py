@@ -52,7 +52,10 @@ def main():
 	test_solution.test_Word_Frequencies(solution)
 	test_solution.test_Smallest_Difference(solution)
 	test_solution.test_sub_sort(solution)
-
+	test_solution.test_contiguous_sequence(solution)
+	test_solution.test_sum_swap(solution)
+	test_solution.test_rand7fromrand5(solution)
+	
 if __name__ == '__main__':
 	main()
 
