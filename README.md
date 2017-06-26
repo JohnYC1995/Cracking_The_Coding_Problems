@@ -27,6 +27,18 @@ My approach to a set of coding problems in the book Cracking the Coding Intervie
 
 10. Sorting and Searching
 
+11. Testing
+
+12. C and C++
+
+13. JAVA
+
+14. Databases
+
+15. Threads and Locks
+
+16. Moderate
+
 ```
 ### How to use
 

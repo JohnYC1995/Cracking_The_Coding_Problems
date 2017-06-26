@@ -600,6 +600,50 @@ class Solution(object):
 		else:
 			return diction[item]
 
+	#------------12. C and C++ -----------#
+	'''
+	1. Virtual Function: used to inheriented by child;when we can't (or don't want to) implement a method for the parent
+	class.
+	2. Pointers and References
+		2.1 Pointers '*'
+		- When define variable using *, it shows that this variable is a pointer.
+		- When '*' is used before the pointer variable, it means get the value of this pointer. 
+		- Example
+			int a = 1000
+			int * b = &a  // b is a pointer
+			print b  // show a's memory location
+			print *b  // show the value in a's memory location, 1000
+		2.2 Reference '&'
+		- When define variable using &, it means this variable is the reference of the 
+			variable if refered.
+		  namely, its another name of the refered variable.
+		- When '&' is used before the variable, it means get the location of this variable.
+		- Example
+			int a = 1000
+			int &c = a
+			print a //print 1000
+			print c //print 1000 since c is just another name of a
+			print &a // print a's location
+			print &c // print c's location, since c is reference of a, so the location of c
+			is the same if a.
+	'''
+	#------------13. JAVA ------------#
+	'''
+	1.Overloading vs. Overriding
+	1.1 Overloading
+		When two methods have the same name but different in the type or number of arguments.
+	1.2 Overriding
+		When a method shares the same name and function signature as another method in its 
+		supper class.
+	'''
+	#------------14. Databases--------#
+	'''
+	Not go into this part yet.
+	'''
+	#------------15. Threads and locks-------#
+	'''
+	It's about multithreading programming, I am not go into this part yet.
+	'''
 	#------------Moderate-------------#
 	#16.1 Number Swapper
 	def swapper(self, a, b):
