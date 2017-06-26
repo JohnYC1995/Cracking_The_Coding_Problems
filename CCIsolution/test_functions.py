@@ -169,59 +169,85 @@ class Test_Solution(Solution):
 		number = 10
 		self.sresult("sieveOfEratosthenes",solution.sieveOfEratosthenes(number))
 	#6 fibonacci
-	def test_fibonacci_2(self,solution):
+	def test_fibonacci_2(self, solution):
 		number = 10
 		self.sresult("fibonacci_2",solution.fibonacci_2(number))
 	#8.1
-	def test_Triple_Step(self,solution):
+	def test_Triple_Step(self, solution):
 		steps = 13
 		self.sresult("8.1 triple_step",solution.Triple_Step(steps))
 	#8.2
-	def test_Robot_in_a_Grid(self,solution):
+	def test_Robot_in_a_Grid(self, solution):
 		Row = 10
 		Column = 13
 		self.sresult("8.2 Robot in a grid",solution.Robot_in_a_Grid(Row,Column))
 	#8.3
-	def test_Magic_Index(self,solution):
+	def test_Magic_Index(self, solution):
 		test_array = [1,2,4,5,5,6,6,6,6]
 		self.sresult("8.3 Magic_Index",solution.Magic_Index(test_array))
 	#8.5 
-	def test_Recursive_Multiply(self,solution):
+	def test_Recursive_Multiply(self, solution):
 		multi1 = 10
 		multi2 =12
 		self.sresult("8.5 Recursive_Multiply",solution.Recursive_Multiply(multi1,multi2))
 	#8.7
-	def test_Permutations(self,solution):
+	def test_Permutations(self, solution):
 		num = '1abc'
 		self.sresult("8.7 Permutations",solution.Permutations(num))
 	#8.11
-	def test_Coins(self,solution):
+	def test_Coins(self, solution):
 		num = 4
 		self.sresult("8.11 Coins",solution.Coins(num))
 	#10 Sort and search
 	# Bubble sort
-	def test_Bubble_sort(self,solution):
+	def test_Bubble_sort(self, solution):
 		test_list = [2,3,4,3,345,5]
 		self.sresult("10 - Bubble sort",solution.Bubble_sort(test_list))
 	#Selection sort
-	def test_Selection_sort(self,solution):
+	def test_Selection_sort(self, solution):
 		test_list = [2,3,4,3,345,5]
 		self.sresult("10 - Selection sort",solution.Selection_sort(test_list))
 	#Merge sort
-	def test_Merge_sort(self,solution):
+	def test_Merge_sort(self, solution):
 		test_list = [2,3,4,3,345,5]
 		self.sresult("10 - Merge sort", solution.mergeSort(test_list))
 	# quick sort 
-	def test_quick_sort(self,solution):
+	def test_quick_sort(self, solution):
 		test_list = [2,3,4,3,345,5]
 		self.sresult("10 - Quick sort", solution.quick_sort(test_list))
 	# 10.1 Sorted Merge
-	def test_Sorted_Merge(self,solution):
+	def test_Sorted_Merge(self, solution):
 		alist = solution.Bubble_sort([15,2,3,4,5,13])
 		blist = solution.Bubble_sort([6,7,8,9,10,11])
 		self.sresult("10.1 Sorted merge", solution.Sorted_Merge(alist,blist))
 	# 10.3 SortedSearchNoSize
-	def test_SortedSearchNoSize(self,solution):
+	def test_SortedSearchNoSize(self, solution):
 		testlist = Listy([1,1,2,2,4,2,5,6,7,7,8,9,10])
 		self.sresult("10.2 SortedSearchNoSize", solution.SortedSearchNoSize(testlist,2))
-	
+	# 16.1 Number Swapper
+	def test_Number_Swapper(self, solution):
+		a = 15
+		b = 51
+		self.sresult("16.1 Number Swapper", solution.swapper(a,b))
+	# 16.2 Word_Frequencies
+	def test_Word_Frequencies(self, solution):
+		testbook  = 'we are the friends, but we are not always be friendly with each other.'
+		special_word1 = 'friends'
+		special_word2 = 'we'
+		self.sresult("16.2 Word_Frequencies-1", solution.Word_Frequencies(testbook,special_word1))
+		self.sresult("16.2 Word_Frequencies-2", solution.Word_Frequencies(testbook,special_word2))
+
+	#16.6 Smallest Difference
+	def test_Smallest_Difference(self,solution):
+		list1 = [10,12,4,34,1,5,665,5,80,35,31,93]
+		list2 = [123,3,45,32,3431,23,39,11]
+		self.sresult("16.6 Smallest_Difference",solution.Smallest_Difference(list1,list2))
+
+	#16.16 Sub Sort
+	def test_sub_sort(self,solution):
+		testlist = [1,2,4,5,52,3,51,61,71]
+		self.sresult("16.16 Sub Sort",solution.sub_sort(testlist))
+
+
+
+

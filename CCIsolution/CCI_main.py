@@ -48,6 +48,11 @@ def main():
 	test_solution.test_Merge_sort(solution)
 	test_solution.test_Sorted_Merge(solution)
 	test_solution.test_SortedSearchNoSize(solution)
+	test_solution.test_Number_Swapper(solution)
+	test_solution.test_Word_Frequencies(solution)
+	test_solution.test_Smallest_Difference(solution)
+	test_solution.test_sub_sort(solution)
+
 if __name__ == '__main__':
 	main()
 

@@ -12,12 +12,13 @@ from Tree import *
 from Graph import *
 import random
 import math
+import string  
 debug = True
 
 class Solution(object):
 	
 	def __init__(self):
-		pass
+		self.test_dict = {}
 	#-------Array and Lists--------#
 	#Hash table can be implemented by a Linked list and a Hash code function
 	#Lookup time B:O(N); W"O(1)
@@ -598,11 +599,96 @@ class Solution(object):
 			return 
 		else:
 			return diction[item]
-	# 10.4 
+
+	#------------Moderate-------------#
+	#16.1 Number Swapper
+	def swapper(self, a, b):
+		a = a - b 
+		b = b + a 
+		a = b - a
+		return a, b
+	#16.2 Word Frequencies
+	def Word_Frequencies(self, testbook, givenword):
+		givenword = str(givenword)
+		if not self.test_dict:
+			delete_character = string.punctuation
+			for word in testbook:
+				if word in delete_character:
+					testbook = testbook.replace(word, ' ')
+			testbook = testbook.split(' ')
+			for word in testbook:			
+				self.test_dict[word] = self.test_dict.get(word,0) + 1
+		if givenword not in self.test_dict.keys():
+			print("the word is not in the book")
+			return 
+		else:
+			return self.test_dict[givenword]
+	#16.6 Smallest Difference
+	def Smallest_Difference(self,list1,list2):
+		list1.sort()
+		list2.sort()
+		print(list1)
+		i = 0
+		j = 0
+		difference = abs(list1[0]-list2[0])
+		while i < len(list1) and j < len(list2):
+			if abs(list1[i]-list2[j]) < difference:
+				location   = []
+				location.append((list1[i],list2[j]))
+				difference = abs(list1[i]-list2[j])
+				print(difference)
+				print(list1[i],list2[j])
+				print(i,j)
+			if list1[i] < list2[j]:
+				i += 1
+			else: 
+				j += 1
+		return difference, location
+	#16.16 Sub Sort
+	def sub_sort(self,tlist):
+		leftlist = [tlist[0]]
+		rightlist = [tlist[-1]]
+		countleft = True
+		countright = True
+		print("----->start")
+		for i in range(len(tlist)-1):
+			if countleft and tlist[i+1]>leftlist[i]:
+				leftlist.append(tlist[i+1])
+				leftindex = i + 2
+			if countright and tlist[-(i+2)] < rightlist[-1]:
+				rightlist.append(tlist[-(i+2)])
+				rightindex = len(tlist)-i-1
+			if tlist[i+1] < tlist[i]:
+				countleft = False
+			if tlist[-(i+2)] > rightlist[-1]:
+				countright = False
+			minvalue = tlist[leftindex]
+			maxvalue = tlist[leftindex]
+			if i >= leftindex and i <= rightindex:
+				if tlist[i] <  minvalue:
+					minvalue = tlist[i] 
+				if tlist[i] > maxvalue:
+					maxvalue = tlist[i]
+		while leftlist[-1] > minvalue:
+			leftlist.pop()
+		while rightlist[-1] <maxvalue:
+			rightlist.pop()
+		print(leftlist)
+		print(rightlist)
+		return (len(leftlist),len(tlist)-len(rightlist))
+
 if __name__ == '__main__':
 	item = (1,2)
 	s = Solution()
 	test = 0b1001
 	alist = s.Bubble_sort([111,2,3,4,5,13])
 	blist = s.Bubble_sort([6,7,8,9,10,11])
-	alist = s.Sorted_Merge(alist,blist)
+	#alist = s.Sorted_Merge(alist,blist)
+	book  = 'we are the friends, but we are not always be friendly with each other.'
+	num   = s.Word_Frequencies(book, 'friends')
+	num2  = s.Word_Frequencies(book, 'we')
+	dif,loca = s.Smallest_Difference(alist,blist)
+	print(dif,loca)
+	a = [1,2,4,5,52,3,51,61,71]
+	result = s.sub_sort(a)
+	print(result)
