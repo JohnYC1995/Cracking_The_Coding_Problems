@@ -48,9 +48,45 @@ To test those solutions, I wrote a test class here:`CCIsolution/test_functions.p
 
 ## LeetCode 
 
-### Contents
+### Contents(By topics)
 
 ```
-  TODO
+1. Array
+
+2. Hash Table
+
+3. Linked List
+
+4. Math 
+
+5. Two Pointers
+
+6. String
+
+7. Binary Search
+
+8. Dynamic Programming 
+
+9. Backtracking 
+
+10. Stack 
+
+11. Bit Manipulation
+
+12. Tree
+
+13. Depth-First Search 
+
+14. Breadth-First Search
+
+15. Design
+
 ```
+
+### Contents(By Company)
+
+TODO
+
+
+
 
