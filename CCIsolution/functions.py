@@ -730,7 +730,7 @@ class Solution(object):
 			if tempvalue > maxvalue:
 				maxvalue = tempvalue
 		return maxvalue
-	#16.21
+	#16.21 sum_swap
 	def sum_swap(self,list1,list2):
 		#sum list
 		sumlist1 = 0
@@ -749,7 +749,7 @@ class Solution(object):
 		if flag == False:
 			print("the lists cannot be the same")
 			return
-	# 16.22
+	# 16.22 rand7fromrand5
 	def rand7fromrand5(self):
 		while True:
 			seed = 5*randint(0,5)+randint(0,5)
