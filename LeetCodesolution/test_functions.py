@@ -1,6 +1,12 @@
-from functions import *
+'''
+!/usr/bin/python
+ -*- coding: utf-8 -*-
+ This is test function for Leetcode questions
+ @ author Yongjun Chen
+LeetCode
+'''
 #Test function
-class Test_Solution(Solution):
+class Test_Solution(object):
 	def __init__(self):
 		pass
 	def pname(self, name):
@@ -97,6 +103,4 @@ class Test_Solution(Solution):
 		list2 = [1,4,3,2]
 		self.sresult("Array 20. arrayPairSum - Easy", solution.arrayPairSum(list2))
 if __name__ == '__main__':
-	test = Test_Solution()
-	solution = Solution()
-	test.test_containsDuplicate(solution)
+	pass

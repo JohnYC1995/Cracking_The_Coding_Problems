@@ -1,10 +1,14 @@
-#LeetCode
-from functions import * 
+'''
+!/usr/bin/python
+ -*- coding: utf-8 -*-
+ This is main function for Leetcode questions
+ @ author Yongjun Chen
+LeetCode
+'''
+from array_class import * 
 from test_functions import *
 import pdb
-def main():
-	solution = Solution()
-	test_solution = Test_Solution()
+def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
 	test_solution.test_removeDuplicates(solution)
 	test_solution.test_removeElement(solution)
@@ -24,6 +28,12 @@ def main():
 	test_solution.test_findMaxConsecutiveOnes(solution)
 	test_solution.test_findPairs(solution)
 	test_solution.test_arrayPairSum(solution)
+
+def main():
+	solution = Array()
+	test_solution = Test_Solution()
+	array_test(solution,test_solution)
+
 if __name__ == '__main__':
 	main()
 
