@@ -6,7 +6,9 @@
 LeetCode
 '''
 from array_class import * 
-from test_functions import *
+from array_test_functions import *
+from string_class import *
+from string_test_functions import *
 import pdb
 def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
@@ -29,11 +31,12 @@ def array_test(solution, test_solution):
 	test_solution.test_findPairs(solution)
 	test_solution.test_arrayPairSum(solution)
 
-def main():
-	solution = Array()
-	test_solution = Test_Solution()
-	array_test(solution,test_solution)
+def string_test(solution, test_solution):
+	test_solution.test_romanToInt(solution)
 
+def main():
+	#array_test(Array(),Array_Test_func())
+	string_test(String(),String_Test_func())
 if __name__ == '__main__':
 	main()
 

@@ -1,12 +1,12 @@
 '''
 !/usr/bin/python
  -*- coding: utf-8 -*-
- This is test function for Leetcode questions
+ This is array test function for Leetcode questions
  @ author Yongjun Chen
 LeetCode
 '''
 #Test function
-class Test_Solution(object):
+class Array_Test_func(object):
 	def __init__(self):
 		pass
 	def pname(self, name):
