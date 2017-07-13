@@ -9,6 +9,8 @@ from array_class import *
 from array_test_functions import *
 from string_class import *
 from string_test_functions import *
+from dynamic_programming_class import *
+from dynamic_programming_test_functions import *
 import pdb
 def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
@@ -33,10 +35,22 @@ def array_test(solution, test_solution):
 
 def string_test(solution, test_solution):
 	test_solution.test_romanToInt(solution)
+	test_solution.test_isValid(solution)
+	test_solution.test_lengthOfLastWord(solution)
+	test_solution.test_reverseString(solution)
+	test_solution.test_countSegments(solution)
+	test_solution.test_lengthOfLongestSubstring(solution)
 
+def dynamic_programming_test(solution, test_solution):
+	test_solution.test_maxSubArray(solution)
+	test_solution.test_rob(solution)
+	test_solution.test_range_sum_query()
+	test_solution.test_uniquePaths(solution)
 def main():
 	#array_test(Array(),Array_Test_func())
 	string_test(String(),String_Test_func())
+	dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
+
 if __name__ == '__main__':
 	main()
 
