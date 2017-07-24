@@ -31,5 +31,9 @@ class Dynamic_Programming_Test_func(object):
 	#-------Median-------#
 	def test_uniquePaths(self, solution):
 		self.sresult("uniquePaths - Median", solution.uniquePaths(3,3))
-
+	def test_minPathSum(self, solution):
+		grid =[[1,2,3],[2,3,1]]
+		self.sresult("minPathSum - Median", solution.minPathSum(grid))
+	def test_numTrees(self, solution):
+		self.sresult("numTrees - Median", solution.numTrees(6))
 

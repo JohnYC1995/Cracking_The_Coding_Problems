@@ -57,11 +57,34 @@ class dynamic_programming(object):
 		print((math.factorial(m-1)*(math.factorial(n-1)))-obsnums*4)
 		return max(int(math.factorial(m+n-2)/(math.factorial(m-1)*(math.factorial(n-1)))-obsnums*4),0)
 
+	def minPathSum(self, grid):
+		w = len(grid)
+		h = len(grid[0])
+		for index in range(1,w):
+			grid[index][0] += grid[index-1][0]
+		for index in range(1,h):
+			grid[0][index] += grid[0][index-1]
+		for i in range(1,w):
+			for j in range(1,h):
+				grid[i][j] += min(grid[i-1][j],grid[i][j-1])
+		return grid[-1][-1]
+	# G(n): the number of unique BST for a sequence of length n.
+	# F(i, n): F(i, n) = G(i-1) * G(n-i).the number of unique BST, when i is the root.
+	# So: G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0) 
+	# So we need G(n-1) before G(n)
+	def numTrees(self, n):
+		G = [0]*(n+1)
+		G[0] = 1
+		G[1] = 1
+		for outer in range(2,n+1):
+			for inner in range(1,outer+1):
+				G[outer] += G[outer-inner]*G[inner-1]
+		return G[-1]
+		
+
 if __name__ == '__main__':
 	s = dynamic_programming()
-	grid = [[0,0],[1,0]]
-	print(s.uniquePathsWithObstacles(grid))
-
-
-
+	grid = [[1,2,3],[3,1,2]]
+	print(s.minPathSum(grid))
+	print(s.numTrees(3))
 

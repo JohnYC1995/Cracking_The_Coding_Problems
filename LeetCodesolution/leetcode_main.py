@@ -46,11 +46,14 @@ def dynamic_programming_test(solution, test_solution):
 	test_solution.test_rob(solution)
 	test_solution.test_range_sum_query()
 	test_solution.test_uniquePaths(solution)
+	test_solution.test_minPathSum(solution)
+	test_solution.test_numTrees(solution)#good one
+
 def main():
 	#array_test(Array(),Array_Test_func())
-	string_test(String(),String_Test_func())
+	#string_test(String(),String_Test_func())
 	dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
-
+	
 if __name__ == '__main__':
 	main()
 
