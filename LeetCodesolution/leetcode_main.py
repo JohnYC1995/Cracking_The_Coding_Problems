@@ -11,6 +11,8 @@ from string_class import *
 from string_test_functions import *
 from dynamic_programming_class import *
 from dynamic_programming_test_functions import *
+from Depth_first_Search_class import *
+from Depth_first_Search_class_test_functions import *
 import pdb
 def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
@@ -49,11 +51,17 @@ def dynamic_programming_test(solution, test_solution):
 	test_solution.test_minPathSum(solution)
 	test_solution.test_numTrees(solution)#good one
 
+def depth_first_search_test(solution, test_solution):
+	test_solution.test_isSameTree(solution)
+	test_solution.test_isSymmetric(solution)
+	test_solution.test_maxDepth(solution)
+	test_solution.test_sortedArrayToBST(solution)
+	
 def main():
 	#array_test(Array(),Array_Test_func())
 	#string_test(String(),String_Test_func())
-	dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
-	
+	#dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
+	depth_first_search_test(Depth_first_Search(),Depth_first_Search_Test_func())
 if __name__ == '__main__':
 	main()
 
