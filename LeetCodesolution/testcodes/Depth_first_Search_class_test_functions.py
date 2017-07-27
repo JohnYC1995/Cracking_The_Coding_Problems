@@ -1,7 +1,7 @@
 '''
 !/usr/bin/python
  -*- coding: utf-8 -*-
- This is dynamic programming test function for Leetcode questions
+ This is depth first search test function for Leetcode questions
  @ author Yongjun Chen
 LeetCode
 '''
