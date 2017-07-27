@@ -5,8 +5,8 @@
  @ author Yongjun Chen
 LeetCode
 '''
-import sys
-sys.path.append("/Users/Juhn/Desktop/Coding_Learn/leetcode/solutions")
+#import sys
+#sys.path.append("/Users/Juhn/Desktop/Coding_Learn/leetcode/solutions")
 from solutions.array_class import * 
 from solutions.string_class import *
 from solutions.dynamic_programming_class import *
