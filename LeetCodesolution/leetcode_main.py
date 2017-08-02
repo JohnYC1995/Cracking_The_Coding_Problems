@@ -5,19 +5,21 @@
  @ author Yongjun Chen
 LeetCode
 '''
-#import sys
-#sys.path.append("/Users/Juhn/Desktop/Coding_Learn/leetcode/solutions")
+import sys
+sys.path.append("/Users/Juhn/Desktop/Coding_Learn/leetcode/solutions")
 from solutions.array_class import * 
 from solutions.string_class import *
 from solutions.dynamic_programming_class import *
 from solutions.Depth_first_Search_class import *
 from solutions.Breadth_first_Search_class import *
+from solutions.two_pointers_class import *
 
 from testcodes.array_test_functions import *
 from testcodes.string_test_functions import *
 from testcodes.dynamic_programming_test_functions import *
 from testcodes.Depth_first_Search_class_test_functions import *
 from testcodes.Breadth_first_Search_class_test_functions import *
+from testcodes.two_pointers_class_test import *
 
 def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
@@ -67,13 +69,23 @@ def breadth_first_search_test(solution, test_solution):
 	test_solution.test_levelOrderBottom(solution)
 	test_solution.test_levelOrder(solution)
 	test_solution.test_zigzagLevelOrder(solution)
+	test_solution.test_solve(solution)
 
+def two_pointers_test(solution, test_solution):
+	test_solution.test_threesum(solution)
+	test_solution.test_threeSumClosest(solution)
+	test_solution.test_foursum(solution)
+	test_solution.test_sortColors(solution)
+	test_solution.test_removeDuplicates(solution)
+	test_solution.test_removeDuplicates_part(solution)
+	
 def main():
-	array_test(Array(),Array_Test_func())
-	string_test(String(),String_Test_func())
-	dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
-	depth_first_search_test(Depth_first_Search(),Depth_first_Search_Test_func())
-	breadth_first_search_test(Breadth_first_Search(),Breadth_first_Search_Test_func())
+	#array_test(Array(),Array_Test_func())
+	#string_test(String(),String_Test_func())
+	#dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
+	#depth_first_search_test(Depth_first_Search(),Depth_first_Search_Test_func())
+	#breadth_first_search_test(Breadth_first_Search(),Breadth_first_Search_Test_func())
+	two_pointers_test(two_pointers(),two_pointer_class_Test_func())
 
 if __name__ == '__main__':
 	main()
