@@ -89,10 +89,39 @@ class Breadth_first_Search(object):
 				levelnums += 1
 		return res
 
+	def solve(self, board):
+		if not board:
+			return 
+		width, height = len(board),len(board[0])
+		boardqueue = [index for k in range(max(width,height)) \
+							for index in ((0,k),(width-1,k),(k,0),(k,height-1))]
+		print("boardqueue",boardqueue)
+		while boardqueue:
+			x, y = boardqueue.pop(0)
+			if 0 <= x < width and 0 <= y < height and board[x][y] == 'O':
+				board[x][y] = '1'
+
+				boardqueue += [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]
+		print("changed board",board)
+		for i in range(width):
+			for j in range(height):
+				if board[i][j] == '1':
+					board[i][j] = 'O'
+				elif board[i][j] == 'O':
+					board[i][j] = 'X'
+		return board
+
+
+
+
+
 if __name__ == '__main__':
-	print(2%2)
+	width = 3
+	height =4
+	boardqueue = [index for k in range(max(width,height)) \
+							for index in ((0,k),(width-1,k),(k,0),(k,height-1))]
 
-
+	print(boardqueue)
 
 
 

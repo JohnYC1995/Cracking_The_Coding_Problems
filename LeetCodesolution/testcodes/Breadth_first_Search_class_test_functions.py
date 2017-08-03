@@ -36,16 +36,19 @@ class Breadth_first_Search_Test_func(object):
 		ptree = TreeNode(3)
 		ptree.left = lefttree
 		ptree.right = righttree		
-		self.sresult("minDepth - easy", solution.minDepth(ptree))
+		self.sresult("minDepth - easy ", solution.minDepth(ptree))
 
 	def test_levelOrderBottom(self, solution):
-		self.sresult("levelOrderbottom - easy", solution.levelOrderBottom(ptree))		
+		self.sresult("levelOrderbottom - easy ", solution.levelOrderBottom(ptree))		
 
 	#---------Medium----------#
 	def test_levelOrder(self, solution):
-		self.sresult("levelOrder - medium", solution.levelOrder(ptree))
+		self.sresult("levelOrder - medium ", solution.levelOrder(ptree))
 
 	def test_zigzagLevelOrder(self, solution):
-		self.sresult("zigzagLevelOrder - medium", solution.zigzagLevelOrder(ptree))
+		self.sresult("zigzagLevelOrder - medium ", solution.zigzagLevelOrder(ptree))
 
+	def test_solve(self, solution):
+		matrix = [['X','X','X','X'],['X','O','O','X'],['X','X','O','X'],['X','O','X','X']]  
+		self.sresult("solve - medium ", solution.solve(matrix))
 
