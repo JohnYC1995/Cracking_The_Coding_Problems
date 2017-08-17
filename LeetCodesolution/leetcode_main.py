@@ -15,6 +15,8 @@ from solutions.Breadth_first_Search_class import *
 from solutions.two_pointers_class import *
 from solutions.math_class import *
 from solutions.hash_table_class import *
+from solutions.binary_search_class import *
+from solutions.backtracking_search_class import *
 
 from testcodes.array_test_functions import *
 from testcodes.string_test_functions import *
@@ -24,6 +26,8 @@ from testcodes.Breadth_first_Search_class_test_functions import *
 from testcodes.two_pointers_class_test import *
 from testcodes.math_class_test import *
 from testcodes.hash_table_test_functions import *
+from testcodes.binary_search_test_functions import *
+from testcodes.binary_search_class_test_functions import *
 
 def array_test(solution, test_solution):
 	test_solution.test_twoSum(solution)
@@ -99,15 +103,29 @@ def hash_table_test(solution, test_solution):
 	test_solution.test_getHint(solution)
 	test_solution.test_fourSumCount(solution)
 
+def binary_search_test(solution, test_solution):
+	test_solution.test_searchMatrix(solution)
+	test_solution.test_findMin(solution)
+	test_solution.test_findPeakElement(solution)
+	test_solution.test_findPeakElement2(solution)
+	test_solution.test_searchMatrix2(solution)
+	test_solution.test_guessNumber(solution)
+
+def backtracking_search_test(solution, test_solution):
+	test_solution.test_readBinaryWatch(solution)
+
 def main():
 	#array_test(Array(),Array_Test_func())
-	#string_test(String(),String_Test_func())
 	#dynamic_programming_test(dynamic_programming(),Dynamic_Programming_Test_func())
+	#string_test(String(),String_Test_func())
+	#math_test(math(),math_class_Test_func())
+	#hash_table_test(hash_table(), hash_table_class_Test_func())		
 	#depth_first_search_test(Depth_first_Search(),Depth_first_Search_Test_func())
 	#breadth_first_search_test(Breadth_first_Search(),Breadth_first_Search_Test_func())
+	#binary_search_test(binary_search(),binary_search_class_Test_func())
 	#two_pointers_test(two_pointers(),two_pointer_class_Test_func())
-	#math_test(math(),math_class_Test_func())
-	hash_table_test(hash_table(), hash_table_class_Test_func())	
+	backtracking_search_test(backtracking_search(),backtracking_search_class_Test_func())
+
 if __name__ == '__main__':
 	main()
 
